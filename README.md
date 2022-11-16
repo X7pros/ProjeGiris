@@ -29,3 +29,15 @@ ip add 11.0.0.1 255.255.255.252
 no sh
 
 ```
+## 3) IPV4 OSPF yapılandırmak için tek tek her routerın içine ospf 1 yazılıp network bacakları girilir
+![ospfipv4](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/3ipv4%20ospf%20tamam.jpg)
+```
+en
+conf t
+router ospf 1
+network 13.0.0.0 0.0.0.3 area 0
+network 11.0.0.0 0.0.0.3 area 0
+network 192.168.1.0 0.0.0.255 area 0
+
+```
+
