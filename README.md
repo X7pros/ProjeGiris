@@ -139,6 +139,17 @@ ipv6 traffic-filter WEBACL6 out
 
 ## 16) WEB browser dışında herhangi bir end device dan ping attığımız zaman access-list ile izin vermediğimiz için router0 dan ilerisine gidememektedir.
 ![ipv6Son](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/96ipv6%20Son.jpg)
+```
+
+
+(DNS sunucusuna  ping atıyoruz)
+
+ping 1ef0:111:11:1::2
+
+
+
+
+```
 
 
 
