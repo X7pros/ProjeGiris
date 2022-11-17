@@ -69,6 +69,36 @@ ip access-group WEBACL out
 
 ## 8) Router0 tcp 80 ve udp 53 dışında kabul etmediğini ping atığımızda "destination host unreachable" ile görmüş oluyoruz.
 ![pingv4](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/7Router%20ping%20kabul%20etmiyor%20sadece%20webden%20izin%20veriyor.jpg)
+## 9) ipv4 yapılandırması bittiği için ipv6 yapılandırmasına geçiyoruz, ilk olarak routerlara ipv6 interfaceleri giriyoruz
+![intfV6](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/8ipv6%20interface.jpg)
+```
+en
+conf t
+ipv6 unicast-routing
+int fa0/0
+ipv6 add 1ef0:222:22:2::1/64
+
+int se0/0/0
+ipv6 add 1ef0:abc:bc:c::2/126
+
+```
+## 10) Router0 ipv6 interfacelerinide bitirip kendi LAN ağı içinde ping testlerimizi yapıyoruz
+![ipv6int](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/9ipv6%20interface%20bitti.jpg)
+```
+en
+conf t
+int se0/0/1
+ipv6 add 1ef0:def:ef:f::1/126
+
+int se0/0/0
+ipv6 add 1ef0:abc:bc:c::1/126
+
+int fa0/0
+ipv6 add 1ef0:111:11:1::1/64
+
+do ping 1ef0:111:11:1::3
+```
+
 
 
 
