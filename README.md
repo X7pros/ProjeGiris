@@ -98,6 +98,24 @@ ipv6 add 1ef0:111:11:1::1/64
 
 do ping 1ef0:111:11:1::3
 ```
+## 11) Tüm routerlara ospf girilir, router0 girilen ospf ve ping tesli şu şekildedir
+![v6ospf](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/91ipv6ospf_tamam.jpg)
+```
+en
+conf t
+ipv6 router ospf 1
+
+int fa0/0
+ipv6 ospf 1 area 0
+
+int se0/0/0
+ipv6 ospf 1 area 0
+
+int se0/0/1
+ipv6 ospf 1 area 0
+
+do ping 1ef0:333:33:3::3 //routerdan end device a ping testinin başarılı olduğunu görüyoruz
+```
 
 
 
