@@ -40,4 +40,28 @@ network 11.0.0.0 0.0.0.3 area 0
 network 192.168.1.0 0.0.0.255 area 0
 
 ```
+## 4) OSPF ile yapılandırdığımız sistemde Laptop0 dan serverlere ping atabiliyoruz, routerlar yönlendirme yapabiliyor
+![pingV4](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/4ipv4%20ospf_pingTestiTamam.jpg)
+```
+laptop0 terminal
+ping 192.168.1.3
+192.168.1.3 den reply gelir
+
+ping 192.168.3.2
+192.168.3.2 den reply gelir
+```
+## 5) DNS servisini açıp ipv4 için www.cisco4.com 192.168.1.3 atanır
+![DNS1](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/93DNS.jpg)
+
+## 6) Routuer0 a extended access-list girilir ve sadece udp 53, tcp 80 için permit verilir, server tarafa out deriz
+![ACL4](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/5ipv4ACLpermit_dns.jpg)
+```
+en
+conf t
+ip access-list extended WEBACL
+permit udp any host 192.168.1.2 eq 53
+permit tcp any host 192.168.1.3 eq 80
+int fa0/0
+ip access-group WEBACL out
+```
 
