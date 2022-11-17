@@ -134,6 +134,12 @@ permit tcp any host 1ef0:111:11:1::3 eq 80
 int fa0/0
 ipv6 traffic-filter WEBACL6 out
 ```
+## 15) Herhangi bir end device dan web browser girip www.cisco6.com erişebiliyoruz
+![WEBv6](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/95ipv6WEBACL.jpg)
+
+## 16) WEB browser dışında herhangi bir end device dan ping attığımız zaman access-list ile izin vermediğimiz için router0 dan ilerisine gidememektedir.
+![ipv6Son](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/96ipv6%20Son.jpg)
+
 
 
 
