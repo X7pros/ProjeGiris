@@ -64,4 +64,11 @@ permit tcp any host 192.168.1.3 eq 80
 int fa0/0
 ip access-group WEBACL out
 ```
+## 7) Herhangi bir end device dan web browserdan www.cisco4.com girince site açılmaktadır
+![ipv4web](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/6ipv4web_sitesigiris.jpg)
+
+## 8) Router0 tcp 80 ve udp 53 dışında kabul etmediğini ping atığımızda "destination host unreachable" ile görmüş oluyoruz.
+![pingv4](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/7Router%20ping%20kabul%20etmiyor%20sadece%20webden%20izin%20veriyor.jpg)
+
+
 
