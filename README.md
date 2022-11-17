@@ -116,7 +116,24 @@ ipv6 ospf 1 area 0
 
 do ping 1ef0:333:33:3::3 //routerdan end device a ping testinin başarılı olduğunu görüyoruz
 ```
+## 12) 'do show ipv6 route' komutu ile kurulan ospf bağlantılarını görebiliyoruz
+![ipv6route](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/92ipv6doShow%20Route.jpg)
 
+## 13) Daha önce açtığımız DNS servisine ana serverin ipv6 adresi olan ekliyoruz www.cisco6.com 
+![DNSv6](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/93DNS.jpg)
+
+## 14) Kurulan ipv6 ospf içinde router0 için access-list kurup ipv6 ile WEB erişimi sağlamak istiyoruz
+![accListV6](https://github.com/X7pros/ProjeGiris/blob/main/Bitirme%20resimler/94%20ipv6%20acl%20kodd.jpg)
+```
+en
+conf t
+ipv6 access-list WEBACL6
+permit udp any host 1ef0:111:11:1::2 eq 53
+permit tcp any host 1ef0:111:11:1::3 eq 80
+
+int fa0/0
+ipv6 traffic-filter WEBACL6 out
+```
 
 
 
